@@ -1,11 +1,36 @@
 <div>
-    <h1>{{ $title }}</h1>
+    <div class="flex m-5">
+        <form
+            action=""
+            wire:submit="createNewUser"
+        >
+            <input
+                type="text"
+                wire:model="name"
+                placeholder="name"
+            >
+            <input
+                type="email"
+                wire:model="email"
+                placeholder="email"
+            >
+            <input
+                type="password"
+                wire:model="password"
+                placeholder="password"
+            >
 
-    <h3>{{ $hello }}</h3>
-    <div class="">{{ count($users) }}</div>
-    <button
-        wire:click="createNewUser"
-        class="btn text-white bg-red-500"
-    >Create a New User</button>
+            <button
+                type="submit"
+                class="btn rounded-lg w-[150px] h-[43px] border border-black"
+            >Create User</button>
+        </form>
 
+    </div>
+
+    <hr>
+
+    @foreach ($users as $user)
+        <h1>{{ $user->name }}</h1>
+    @endforeach
 </div>
