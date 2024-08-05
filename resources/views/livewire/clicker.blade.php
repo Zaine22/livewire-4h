@@ -1,19 +1,11 @@
 <div>
+    <h1>{{ $title }}</h1>
 
-    <div class="flex flex-row justify-center gap-x-6 justify-items-center">
-        <button
-            wire:click="add"
-            class="btn text-white text-2xl bg-teal-500 border rounded-lg w-12"
-        >
-            +
-        </button>
-        <div>{{ $count }}</div>
-        <button
-            wire:click="reduce"
-            class="btn text-white text-2xl bg-teal-500 border rounded-lg w-12 "
-        >
-            -
-        </button>
-    </div>
+    <h3>{{ $hello }}</h3>
+    <div class="">{{ count($users) }}</div>
+    <button
+        wire:click="createNewUser"
+        class="btn text-white bg-red-500"
+    >Create a New User</button>
 
 </div>

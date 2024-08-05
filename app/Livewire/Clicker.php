@@ -2,25 +2,26 @@
 
 namespace App\Livewire;
 
+use App\Models\User;
 use Livewire\Component;
 
 class Clicker extends Component
 {
-
-    public $count = 1;
-
-    public function add()
+    public $hello = "hello world";
+    public function createNewUser()
     {
-        $this->count++;
-    }
-    public function reduce()
-    {
-        if ($this->count !== 0) {
-            $this->count--;
-        };
+        User::factory()->create();
+
     }
     public function render()
     {
-        return view('livewire.clicker', ["count" => $this->count]);
+        $title = "Test User";
+
+        $users = User::all();
+
+        return view('livewire.clicker', [
+            "title" => $title,
+            "users" => $users,
+        ]);
     }
 }
