@@ -8,21 +8,38 @@
                 type="text"
                 wire:model="name"
                 placeholder="name"
+                class="block rounded border border-grey-100 px-3 py-1 "
             >
+
+            @error("name")
+                <span class="text-red-500 text-xs">{{ $message }}</span>
+            @enderror
+
             <input
                 type="email"
                 wire:model="email"
                 placeholder="email"
+                class="block rounded border border-grey-100 px-3 py-1 mt-2"
             >
+
+            @error("email")
+                <span class="text-red-500 text-xs">{{ $message }}</span>
+            @enderror
+
             <input
                 type="password"
                 wire:model="password"
                 placeholder="password"
+                class="block rounded border border-grey-100 px-3 py-1 mt-2"
             >
+
+            @error("password")
+                <span class="text-red-500 text-xs">{{ $message }}</span>
+            @enderror
 
             <button
                 type="submit"
-                class="btn rounded-lg w-[150px] h-[43px] border border-black"
+                class="block rounded border bg-gray-400 text-white mt-4"
             >Create User</button>
         </form>
 
