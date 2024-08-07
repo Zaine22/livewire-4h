@@ -1,5 +1,9 @@
 <div>
+    @if (session("success"))
+        <div class="w-100 py-3 bg-green-300 rounded text-center">{{ session("success") }}</div>
+    @endif
     <div class="flex m-5">
+
         <form
             action=""
             wire:submit="createNewUser"
